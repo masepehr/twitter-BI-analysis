@@ -1,0 +1,93 @@
+{% extends '_base.html' %}
+
+{% block extrahead %}
+<script src="https://cdnjs.cloudflare.com/ajax/libs/jquery/3.3.1/jquery.min.js"></script>
+<script src="https://cdnjs.cloudflare.com/ajax/libs/jquery.blockUI/2.70/jquery.blockUI.min.js"></script>
+
+
+<script>
+    $("#form1").submit(function() {
+    $.ajax({
+           type: "POST",
+           url: this.action,
+           data: $(this).serialize(), //Serialize a form to a query string.
+           success: function(response){
+               alert(response); //response from server.
+           }
+         });
+    return false; // prevent form to submit.
+});
+
+    $(document).ready(function () {
+        $('#btn_search').click(function () {
+
+                $.blockUI.defaults.message = "Analysing ...";
+            // $.blockUI({ overlayCSS: { backgroundColor: '#00acee' } });
+                $.blockUI({
+                    css: {
+                        width: '200px',
+                        border: 'none',
+                        padding: '15px',
+                        borderColor: '#c9e3ff',
+                        backgroundColor: '#03193c',
+                        '-webkit-border-radius': '10px',
+                        '-moz-border-radius': '10px',
+                        opacity: .5,
+                        color: '#fff'
+                    }
+                });
+
+
+
+
+
+
+        });
+    });
+
+
+</script>
+{% endblock %}
+{% block content %}
+<div class="text-center">
+
+
+    <div class="btn_twiit">
+
+
+        <form id="form1" method="post">
+            <input name="seach_key" type="text" placeholder="Enter  @username" >
+            <br>
+            <br>
+
+                 {% csrf_token %}
+                <a class="icon-button twitter" id="btn_search" onclick="document.getElementById('form1').submit();">
+
+                    <label class="text">
+                        search
+                    </label>
+
+                    <i class="icon-twitter">
+                    <span>
+
+ <img class="icon-button twitter" src="../../static/Extraction/images/aa.png" height="98" width="98"/>
+                </span>
+                    </i>
+                </a>
+
+
+        </form>
+
+
+    </div>
+    {% if some_flag %}
+    <div id="some_flag" title="Some Flag">
+        <p>{{ message }}</p>
+    </div>
+{% endif %}
+</div>
+
+</div>
+
+{% endblock %}
+

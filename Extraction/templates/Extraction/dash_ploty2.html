@@ -1,0 +1,47 @@
+{% extends '_dash_base.html' %}
+{% load static %}
+
+{% block extrahead %}
+
+{{ script | safe }}
+{% endblock %}
+{% block dash_content %}
+
+{% autoescape off %}
+<div style=" background:white;">
+        <div class="row">
+
+
+
+               <div class="col">
+
+                    {{ plot_div3 }}
+               </div>
+
+
+
+
+        </div>
+        <div class="row" >
+
+
+                <div class="col-6 " >
+
+                    {{ plot_div2 }}
+
+                </div>
+                <div class="col-6 " >
+
+                    {{ plot_div1 }}
+
+                </div>
+
+        </div>
+
+
+</div>
+
+
+{% endautoescape %}
+
+{% endblock %}

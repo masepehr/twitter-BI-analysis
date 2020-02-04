@@ -1,0 +1,89 @@
+
+
+<!-- Sidebar -->
+    <ul class="navbar-nav sidebar sidebar-dark accordion" id="accordionSidebar" style="background:rgb(2, 11, 36);">
+
+      <!-- Sidebar - Brand -->
+      <a class="sidebar-brand d-flex align-items-center justify-content-center" href="#">
+        <div class="sidebar-brand-icon ">
+
+
+
+        </div>
+        <div class="sidebar-brand-text mx-3"> </div>
+      </a>
+
+
+      <li class="nav-item active" >
+        <a class="nav-link" href="#" style="text-align: center">
+          <img src="{{ myuser.pic.url }}" height="80" width="" style="border-radius: 3.6rem;"/>
+        </a>
+      </li>
+      <!-- Divider -->
+      <hr class="sidebar-divider my-0">
+
+      <!-- Nav Item - Dashboard -->
+      <li class="nav-item active" >
+
+          <i class="fas fa-fw "></i>
+         <a class="nav-link" href="{% url 'dashbord' username=uname  %}" style="text-align: center">
+          <span>{{ uname }}</span>
+        </a>
+      </li>
+      <li class="nav-item active sidebar-heading" style="text-align: center" >
+
+          <script>
+
+    </script>
+          <span>followers: {{ followers }}</span><br>
+          <span>followings: {{ followings }}</span>
+
+
+      </li>
+
+      <!-- Divider -->
+      <hr class="sidebar-divider">
+
+      <!-- Heading -->
+      <div class="sidebar-heading">
+        {{ datefrom }}-{{ dateto }}
+      </div>
+
+
+
+
+
+      <!-- Divider -->
+      <hr class="sidebar-divider">
+
+      <!-- Heading -->
+      <div class="sidebar-heading">
+
+      </div>
+
+
+
+      <!-- Nav Item - Charts -->
+      <li class="nav-item">
+        <a class="nav-link" href="{% url 'personal' username=uname  %}">
+          <i class="fas fa-fw fa-info fa-chart-area"></i>
+          <span>Personal charts</span></a>
+      </li>
+
+      <!-- Nav Item - Tables -->
+      <li class="nav-item">
+        <a class="nav-link" href="{% url 'influence' username=uname  %}">
+          <i class="fas fa-fw fa-star "></i>
+          <span>Influence</span></a>
+      </li>
+
+      <!-- Divider -->
+      <hr class="sidebar-divider d-none d-md-block">
+
+      <!-- Sidebar Toggler (Sidebar) -->
+      <div class="text-center d-none d-md-inline">
+        <button class="rounded-circle border-0" id="sidebarToggle"></button>
+      </div>
+
+    </ul>
+    <!-- End of Sidebar -->

@@ -1,6 +1,6 @@
-a simple twitter data analysis
+a simple twitter data analysis demo
 
-requirements:
+**requirements:**
 
 django-dash==0.5.6 <br>
 django-plotly-dash==1.1.5 <br>
